@@ -32,7 +32,7 @@ of making the code generate a random starting amount of balls.
   as an image and including the image(s) in the README. You can do this
   by saving an image in the repository and linking to it. See the sample CRC card below - and replace it with your own.
   
-![alt text](image/crc.png "Image of CRC card as an example. Upload your CRC card(s) in place of this one")
+![alt text](image/CRC.png "Image of CRC card as an example. Upload your CRC card(s) in place of this one")
 
 ❗️**Branches**: This project will require effective use of git. 
 Each partner should create a branch at the beginning of the project, and stay on this branch (or branches of this branch) as they work.
