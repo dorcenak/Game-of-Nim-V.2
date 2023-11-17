@@ -15,28 +15,20 @@ Throughout this project, you have likely used outside resources. Reference all i
 
 ## Milestone 1: Setup, Planning, Design
 
-❗️**Title**: What is the title of your project? 
+**Title**: 
   Game of Nim Mark II
 
-❗**Purpose**: In a single sentence, describe what your project will do. 
+**Purpose**: 
   Our project will work in the same manner as the original game of nim but with the change 
 of making the code generate a random starting amount of balls.
 
-❗️**Sources**: Which assignments will you base your project on?
+**Sources**: 
   Our project will be based on homework 6: The Game of Nim.
-❗️**CRC Card(s)**:
-  - Please write a CRC card for each class that your project will implement.
-  - See this link for a sample CRC card and a template to
-  use for your own cards (you will have to make a copy to edit): https://docs.google.com/document/d/1JE_3Qmytk_JGztRqkPXWACJwciPH61VCx3idIlBCVFY/edit?usp=sharing
-  - Tables in markdown are not easy, so we suggest saving your CRC card
-  as an image and including the image(s) in the README. You can do this
-  by saving an image in the repository and linking to it. See the sample CRC card below - and replace it with your own.
+**CRC Card(s)**:
   
 ![alt text](image/CRC.png "Image of CRC card as an example. Upload your CRC card(s) in place of this one")
 
-❗️**Branches**: This project will require effective use of git. 
-Each partner should create a branch at the beginning of the project, and stay on this branch (or branches of this branch) as they work.
-When you need to bring each others branches together, do so by merging each other's branches into your own. 
+**Branches**: 
 1. Branch 1 name: kichemy-branch
 2. Branch 2 name: DACC-branch
 
