@@ -1,10 +1,10 @@
-# ❗CSC226 Final Project
+# CSC226 Final Project
 
 ❗️Exclamation Marks ❗️indicate action items; you should remove these emoji as you complete/update the items which they accompany. (This means that your final README should have no ❗️in it!)
 
-❗️**Author(s)**: Your names here
+**Author(s)**: Kichemy & Diego
 
-❗️**Google Doc Link**: Your link here
+**Google Doc Link**: https://docs.google.com/document/d/1iyLxrsavHL-QFgBKrcvRiFc25MP0h0UUUf7HaLXz0MA/edit?usp=sharing
 
 ---
 
