@@ -15,12 +15,15 @@ Throughout this project, you have likely used outside resources. Reference all i
 
 ## Milestone 1: Setup, Planning, Design
 
-❗️**Title**: What is the title of your project?
+❗️**Title**: What is the title of your project? 
+  Game of Nim Mark II
 
-❗**Purpose**: In a single sentence, describe what your project will do.
+❗**Purpose**: In a single sentence, describe what your project will do. 
+  Our project will work in the same manner as the original game of nim but with the change 
+of making the code generate a random starting amount of balls.
 
 ❗️**Sources**: Which assignments will you base your project on?
-
+  Our project will be based on homework 6: The Game of Nim.
 ❗️**CRC Card(s)**:
   - Please write a CRC card for each class that your project will implement.
   - See this link for a sample CRC card and a template to
@@ -34,8 +37,8 @@ Throughout this project, you have likely used outside resources. Reference all i
 ❗️**Branches**: This project will require effective use of git. 
 Each partner should create a branch at the beginning of the project, and stay on this branch (or branches of this branch) as they work.
 When you need to bring each others branches together, do so by merging each other's branches into your own. 
-1. Branch 1 name: _____________
-2. Branch 2 name: _____________
+1. Branch 1 name: kichemy-branch
+2. Branch 2 name: DACC-branch
 
 ---
 
