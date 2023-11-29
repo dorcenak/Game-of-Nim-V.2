@@ -41,7 +41,7 @@ No README action items. Keep your issue queue up to date, and focus on your code
 Your repository should have, at a minimum, two branches; one for each partner, each with their contributions. 
 -Diego A. Colorado:
 ---
-
+ 
 ## Milestone 3: Virtual Check-In
 
 Indicate what percentage of the project you have left to complete and how confident you feel. 
