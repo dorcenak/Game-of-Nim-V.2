@@ -47,7 +47,7 @@ When you need to bring each others branches together, do so by merging each othe
 No README action items. Keep your issue queue up to date, and focus on your code. 🙃
 
 Your repository should have, at a minimum, two branches; one for each partner, each with their contributions. 
-
+-Diego A. Colorado:
 import random
 def display_remains(strtV1):
     print("Total balls remaining:", strtV1)
