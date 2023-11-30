@@ -39,7 +39,7 @@ of making the code generate a random starting amount of balls.
 No README action items. Keep your issue queue up to date, and focus on your code. 🙃
 
 Your repository should have, at a minimum, two branches; one for each partner, each with their contributions. 
-
+ 
 ---
  
 ## Milestone 3: Virtual Check-In
