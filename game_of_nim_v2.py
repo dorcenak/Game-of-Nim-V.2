@@ -1,52 +1,70 @@
 import random
-def display_remains(strtV1):
-    print("Total balls remaining:", strtV1)
+import tkinter as tk
+from tkinter import ttk
 
-def player_move(strtV1):
-    while True:
-        try:
-            tkp1 = input("Awesome! How many balls from 1 to 4 would you like to take away?")
-            tkp1 = int(tkp1)
-            if 1 <= tkp1 <= 4 and tkp1 <= strtV1:
-                return tkp1
-            else:
-                print("I'm sorry. Only a value between 1 and 4 can be entered.")
-        except ValueError:
-            print("I'm sorry. please put in a different value.")
+class NimII:
+    """
+    A class that will create the window and allow the application to make certain actions
+    """
+    def __init__(self, windowtext):
+        """
+         The initializer creates a window to contain the widgets
 
-def computer_turn(strtV1):
-    comp_subtract = random.randint(1, min(4, strtV1))
-    print("The computer took away", comp_subtract, "balls.")
-    return comp_subtract
+        :param windowtext: The text at the top of the window title
+         """
+        self.root = tk.Tk()  # Create the root window where all widgets go
+        self.root.minsize(width=800, height=400)  # Sets the window's minimum size
+        self.root.maxsize(width=800, height=400)  # Sets the window's maximum size
+        self.root.title(windowtext)  # Sets root window title
 
-def ball_input():
-    usr_name = input("Hello. What is your name?")
-    print("Hi "+usr_name+"!")
-    q1 = input("Would you like to play a game?")
-    if q1 == 'yes':
-        comp_subtract = random.randint(15, min(99, strtV1))
-        strtV1 = int(input("Awesome! How many balls do you want to start off with? The amount has to be at or higher than 15 though."))
+        self.myButton1 = None
 
-        if strtV1 >= 15:
-            player_turn = True
-            while strtV1 > 0:
-                display_remains(strtV1)
+        self.myTextBox1 = tk.Entry(self.root)
+        self.myTextLabel1Text = tk.StringVar()  # Makes a Tkinter string variable
+        self.myTextLabel1 = None
+        self.myCombobox = None
 
-                if player_turn:
-                    subtracted = player_move(strtV1)
-                else:
-                    subtracted = computer_turn(strtV1)
+    def create_label1(self, labeltext=""):
+        """
+        Creates a label on the window and sets the label to labeltext
 
-                strtV1 -= subtracted
-                player_turn = not player_turn
-            display_remains(strtV1)
-            if player_turn:
-                print("Congratulations! You win!")
-            else:
-                print("The computer won. Get destroyed.")
-        else:
-            print("I'm sorry. That number cannot be entered")
-    else:
-        print("Okay. See you next time then!")
+        :param labeltext: The text on the label
+        :return: None
+        """
 
-ball_input()
+        self.myTextLabel1Text.set(labeltext)  # Sets the Tkinter string variable
+        self.myTextLabel1 = tk.Label(self.root, textvariable=self.myTextLabel1Text)
+        self.myTextLabel1.grid(row=2, column=8, sticky=tk.E + tk.W, pady=10)
+
+    def create_textbox1(self):
+        """
+        Creates a textbox into which the user can type
+
+        :return: None
+        """
+
+        self.myTextBox1.grid(row=3, column=8, sticky=tk.E + tk.W, pady=10)
+
+    def create_label2(self):
+        pass
+
+    def create_textbox2(self):
+        pass
+
+
+def main():
+    """
+    Creates GUI and uses button, textbox and label GUI widgets
+
+    :return: None
+    """
+
+    myGUI = NimII("Games of Nim V2.0")  # Create a new NimII object
+    myGUI.create_label1("What is your name?")  # Calls the create button method to create a button
+    myGUI.create_textbox1()  # Calls the create textbox method for capturing user input
+
+    myGUI.root.mainloop()  # Needed to start the event loop
+
+
+if __name__ == "__main__":
+ main()
