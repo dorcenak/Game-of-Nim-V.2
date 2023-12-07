@@ -127,58 +127,11 @@ class NimII:
         self.myButton2.destroy()
         self.create_label7(message)
 
-    #     self.display_message_progressively(message, 0, self.display_final_scene)  # Do not call the callback here
-    #
-    # def display_message_progressively(self, message, index, callback):
-    #     if index < len(message):
-    #         current_text = self.myTextLabel3Text.get()
-    #         current_text += message[index]
-    #         self.myTextLabel3Text.set(current_text)
-    #         self.root.after(100, self.display_message_progressively, message, index + 1, callback)
-    #     else:
-    #         # Adjust the timing based on the length of the message
-    #         self.root.after(100 * len(message), callback)
-    # #
-    # def display_final_scene(self):
-    #     user_name = self.myTextBox1Text.get()  # Retrieve stored text
-    #     welcome_message = "Welcome, {0}, to the Games of Nim version 2.0!".format(user_name)
-    #     self.myTextLabel3Text.set(welcome_message)
-
-    # def fun_remove_balls(self, balls_remaining - None, ):
-    #     self.balls_remaining -= self.myTextBox2Text
-    #     return self.balls_remaining
-    #
-    # def fun_comp_turn(self, balls_remaining):
-    #     remove_value = balls_remaining % 5
-    #     balls_remaining = balls_remaining - remove_value
-    #     return remove_value
-
 
 def main():
     myGUI = NimII("Games of Nim V2.0")
     myGUI.create_label1("Welcome to the Games of Nim V2.0")
     myGUI.root.mainloop()
-
-
-    # while myGUI.myTextBox2Text < 1 or myGUI.myTextBox2Text > 4:
-    #     print("Number must be between 1 and 4.")
-    #     myGUI.create_label6()
-    #     myGUI.create_textbox2()
-    #     myGUI.create_button2()
-    # myGUI.number_of_balls = myGUI.fun_remove_balls(myGUI.number_of_balls, myGUI.remove_balls)
-    # print(f'You took {remove_balls} ball(s).')
-    # print(f'{number_of_balls} ball(s) remaining.')
-    #
-    # if number_of_balls == 0:
-    #     print("You won")
-    # else:
-    #     remove_value = fun_comp_turn(number_of_balls)
-    #     print(f'Computer takes {remove_value} ball(s).')
-    #     number_of_balls = fun_remove_balls(number_of_balls, remove_value)
-    #     print(f'{number_of_balls} ball(s) remaining.')
-    #
-    #     if number_of_balls == 0:
-    #         print("The computer won")
 
 if __name__ == "__main__":
     main()
