@@ -13,7 +13,6 @@ class NimII:
         self.message_number_of_balls = "Let's start with {0} balls.".format(self.number_of_balls)
         self.balls_remaining = None
         self.balls_removed = None
-
         self.myButton1 = None
         self.myButton2 = None
         self.myTextBox1 = tk.Entry(self.root)
