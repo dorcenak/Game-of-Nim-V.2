@@ -1,15 +1,9 @@
 # CSC226 Final Project
 
-❗️Exclamation Marks ❗️indicate action items; you should remove these emoji as you complete/update the items which they accompany. (This means that your final README should have no ❗️in it!)
-
 **Author(s)**: Kichemy & Diego
 
 **Google Doc Link**: https://docs.google.com/document/d/1iyLxrsavHL-QFgBKrcvRiFc25MP0h0UUUf7HaLXz0MA/edit?usp=sharing
 
----
-
-❗**References**: 
-Throughout this project, you have likely used outside resources. Reference all ideas which are not your own, and describe how you integrated the ideas or code into your program. This includes online sources, people who have helped you, and any other resources that are not solely your own contribution. Update as you go.
 
 ---
 
@@ -31,20 +25,11 @@ of making the code generate a random starting amount of balls.
 **Branches**: 
 1. Branch 1 name: kichemy-branch
 2. Branch 2 name: DACC-branch
-
----
-
-## Milestone 2: Code
-
-No README action items. Keep your issue queue up to date, and focus on your code. 🙃
-
-Your repository should have, at a minimum, two branches; one for each partner, each with their contributions. 
  
+
 ---
  
 ## Milestone 3: Virtual Check-In
-
-Indicate what percentage of the project you have left to complete and how confident you feel. 
 
 ️**Completion Percentage**: 70%
 
@@ -61,10 +46,14 @@ When the game starts there will be a text displaying a welcome message. After th
 ### Errors and Constraints
 We created the necessary issue queues for any bugs.
 
-### ❗Reflection
+### Reflection
 In three to four well-written paragraphs, address the following (at a minimum):
-- Why did you select the project that you did?
-- How closely did your final project reflect your initial design?
-- What did you learn from this process?
-- What was the hardest part of the final project?
-- What would you do differently next time, knowing what you know now?
+At first, we wanted to choose a straightforward project. However, when we were thinking about it, we noticed that the project can be simple to run into the console, but it won’t be that simple to implement into the GUI window. Later on, we chose the Game of Nim, not because of its simplicity but because of its closeness to what we call “Games.” Additionally, it was the assignment we understood the most.
+
+The new design overall is substantially different from that of the original. Our goal for this project was to make the game more user-friendly, and we achieved that by implementing the game into a screen pop-up rather than just simple printed input texts.
+
+Overall, we learned a lot. The project allowed us to make practical use of window and button commands on Pycharm. But mainly, the project forced us to use nearly everything taught over the course of the semester, making us memorize and use self-statements, while loops, for loops, tk, and ttk tkinter commands, etc.
+
+The hardest part of the project was trying to get our code to continue after announcing to the user how many balls they would start off with. During the very beginning of the project, this was one of the most significant issues that we ran into at the time.
+
+One thing that we felt that we could have done differently was our work ethic. Due to our differing schedules, we often had to make use of partner programming to complete the project. The final couple weeks of classes are a hectic time for all. However, we could have handled the matter more smartly.
