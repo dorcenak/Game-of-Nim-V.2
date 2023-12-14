@@ -1,70 +1,70 @@
-from inspect import getframeinfo, stack
+######################################################################
+# Author(s): Kichemy & Diego
+# Username(s): dorcenak & coloradod
+#
+# Assignment: Final Project
+#
+# Purpose: Test some methods in the game_of_nim_v2.py file
+######################################################################
+# Acknowledgements: hw06: The Game of Nim by Kichemy & Jaela for the test file template
+#                   Dr. Scott helped us understand how testing method of a class varies from testing a global function
+#                   Python 360 Youtube channel. We used it as a blueprint to learn how to create unit t
+#                   ests with classes.
+#                   Link to the video we used: https://www.youtube.com/watch?v=WmJwA-ys39A&ab_channel=Python360
+#
+####################################################################################
 
+from inspect import getframeinfo, stack
 from game_of_nim_v2 import NimII
 
 
-def unittest(did_pass):
+def unittest(did_pass, test_name):
     """
     Print the result of a unit test.
     :param did_pass: a boolean representing the test
+    :param test_name: name of the test
     :return: None
     """
-
     caller = getframeinfo(stack()[1][0])
     linenum = caller.lineno
     if did_pass:
-        msg = "Test at line {0} ok.".format(linenum)
+        msg = f"Test '{test_name}' at line {linenum} ok."
     else:
-        msg = ("Test at line {0} FAILED.".format(linenum))
+        msg = f"Test '{test_name}' at line {linenum} FAILED."
     print(msg)
 
 
 def game_of_nim_test_suite():
     """
-   This is a potential test suite that will be testing the different funtions of the main file
-
+    Testing the methods that return a value in the game_of_nim_v2.py file
     :return: None
     """
-
     print("\n Running the game_of_nim_test_suite())")
-    # The following tests test the create_label1() function
-    # print("Testing create_label1()")
-    # pass
-    #
-    # # The following tests test the create_label2() function
-    # print("Testing create_label2()")
-    # pass
 
-    # The following tests test the text_box1() function
-    # print("Testing text_box1()")
-    # pass
-    #
-    # # The following tests test the text_box2() function
-    # print("Testing text_box2()")
-    # pass
-
-    # The following tests test the fun_remove_balls() function
-
-    # unittest(fun_remove_balls(12, 14) == 14)
-
-    # Create an instance of the NimII class
+    # Test 1: fun_remove_balls
     nim_instance = NimII(windowtext="")
+    nim_instance.number_of_balls = 50
+    unittest(nim_instance.fun_remove_balls(1) == 49, "fun_remove_balls")   # should pass
+    unittest(nim_instance.fun_remove_balls(2) == 20, "fun_remove_balls")   # should fail
+    unittest(nim_instance.fun_remove_balls(3) == 10, "fun_remove_balls")   # should fail
+    unittest(nim_instance.fun_remove_balls(3) == 41, "fun_remove_balls")   # should pass
+    unittest(nim_instance.fun_remove_balls(1) == 40, "fun_remove_balls")   # should pass
+    unittest(nim_instance.fun_remove_balls(1) == 50, "fun_remove_balls")   # should fail
 
+    # Test 2: fun_comp_turn
+    nim_instance = NimII(windowtext="")
+    nim_instance.number_of_balls = 17
+    unittest(nim_instance.fun_comp_turn() == 2, "fun_comp_turn")           # should pass
+    unittest(nim_instance.fun_comp_turn() == 4, "fun_comp_turn")           # should fail
+    unittest(nim_instance.fun_comp_turn() == 2, "fun_comp_turn")           # should fail
 
-    # The following tests the fun_remove_balls() function
-    unittest(nim_instance.fun_remove_balls(10) == 14)
-    unittest(nim_instance.fun_remove_balls(2) == 0)
-
-    unittest(nim_instance.fun_comp_turn() == 14)
-    print("\n Running the game_of_nim_test_suite())")
+    print("\n Finished running the game_of_nim_test_suite()")
 
 
 def main():
     """
-
-    :return:
+    :return: None
     """
-
     game_of_nim_test_suite()
 
 

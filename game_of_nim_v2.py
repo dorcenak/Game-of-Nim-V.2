@@ -177,7 +177,7 @@ class NimII:
         self.myTextLabel4 = tk.Label(self.root, textvariable=self.myTextLabel4Text, font=('Verdana', 13), bg='#333333',
                                      fg='#1E90FF')
         self.myTextLabel4.place(relx=0.5, rely=0.3, anchor='center')
-        self.root.after(10000, self.clear_label4)
+        self.root.after(8000, self.clear_label4)
 
     def create_label5(self, labeltext5=""):
         """
@@ -190,7 +190,7 @@ class NimII:
         self.myTextLabel5 = tk.Label(self.root, textvariable=self.myTextLabel5Text, font=('Verdana', 10), bg='#333333',
                                      fg='white')
         self.myTextLabel5.place(relx=0.5, rely=0.2, anchor='center')
-        self.root.after(1000, self.clear_label5)
+        self.root.after(2000, self.clear_label5)
 
     def create_label6(self, labeltext6=""):
         """
