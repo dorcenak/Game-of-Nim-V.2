@@ -44,7 +44,7 @@ class NimII:
         self.root.resizable(False, False)
         self.root.title(windowtext)
         self.root.configure(bg='#333333')  # Dark gray background
-        self.number_of_balls = random.randint(15, 100) if balls_remaining is None else balls_remaining
+        self.number_of_balls = random.randint(15, 99) if balls_remaining is None else balls_remaining
         self.message_number_of_balls = "Let's start with {0} balls.".format(self.number_of_balls)
         self.balls_remaining = balls_remaining
         self.balls_removed = balls_removed
@@ -164,7 +164,7 @@ class NimII:
         self.root.after(3000, self.clear_label3)
 
     def create_label4(self, label_texts=['RULES:', '1.You have to play first.',
-                                         '2.You cannot remove a number of balls that is neither lower than 1 nor higher than 5.',
+                                         '2.You cannot remove a number of balls that is neither lower than 1 nor higher than 4.',
                                          '3.You will lose if the computer removes the last number of balls.']):
         """
         Create and display a fourth label with specified multiline text.
@@ -204,6 +204,8 @@ class NimII:
                                      fg='#FFFFE0')
         self.myTextLabel6.place(relx=0.5, rely=0.3, anchor='center')
 
+
+
     def create_label7(self, labeltext7=""):
         """
         Create and display a seventh label with specified text.
@@ -239,7 +241,7 @@ class NimII:
         self.myTextLabel9 = tk.Label(self.root, textvariable=self.myTextLabel9Text, font=('Verdana', 10), bg='#333333',
                                      fg='red')
         self.myTextLabel9.place(relx=0.5, rely=0.5, anchor='center')
-
+        self.root.after(2000, self.clear_label9)
     def create_label10(self, labeltext6=""):
         """
         Create and display a tenth label with specified text.
@@ -323,8 +325,14 @@ class NimII:
         :return: None
         """
         print("Button 1 clicked!")
-        txt = self.myTextBox1.get()
-        # self.myTextBox1Text.set(txt)  # Store the entered text
+        txt = self.myTextBox1.get().strip()  # Remove leading and trailing whitespaces
+
+        if not txt or txt.isdigit():
+            error_message = "Please enter a valid name."
+            self.create_label9(error_message)
+            return
+
+        # Perform the necessary actions after a valid name is entered
         message = "Welcome, {0}, to the Game of Nim version 2.0!".format(txt)
         self.myTextLabel2.destroy()
         self.myTextBox1.destroy()
@@ -348,6 +356,11 @@ class NimII:
         :return: The value to be removed by the computer.
         """
         remove_value = self.number_of_balls % 5
+
+        # If the calculated remove_value is 0, choose a random value between 1 and 4
+        if remove_value == 0:
+            remove_value = random.randint(1, 4)
+
         self.number_of_balls -= remove_value
         return remove_value
 
@@ -431,6 +444,7 @@ class NimII:
 
         if self.number_of_balls == 0:
             message = f'You removed {txt2} ball(s). You won!'
+            self.clear_label6()
             self.create_label7(message)
             self.create_label8("Press 'Restart Game' to play again.")
             self.hide_submit_button()
