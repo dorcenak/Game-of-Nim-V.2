@@ -55,14 +55,11 @@ Indicate what percentage of the project you have left to complete and how confid
 
 ## Milestone 4: Final Code, Presentation, Demo
 
-### ❗User Instructions
-In a paragraph, explain how to use your program. Assume the user is starting just after they hit the "Run" button in PyCharm. 
+### User Instructions
+When the game starts there will be a text displaying a welcome message. After that, the program will prompt the user to enter their name. After that, the user will read the instructions that will be displayed. The next scene would be the game, where they ask the user to select the number of balls they want to remove. If entered a number lower than 1 or higher than 4, the program won't let them move forward. When lost, they have the option to restart the game. The quit option is available in all the scenes in case they user wants to quit the game.
 
-### ❗Errors and Constraints
-Every program has bugs or features that had to be scrapped for time. 
-These bugs should be tracked in the issue queue. You should already have a few items in here from the prior weeks. 
-Create a new issue for any undocumented errors and deficiencies that remain in your code. 
-Bugs found that aren't acknowledged in the queue will be penalized.
+### Errors and Constraints
+We created the necessary issue queues for any bugs.
 
 ### ❗Reflection
 In three to four well-written paragraphs, address the following (at a minimum):
