@@ -1,6 +1,6 @@
 from inspect import getframeinfo, stack
 
-from game_of_nim_v2 import *
+from game_of_nim_v2 import NimII
 
 
 def unittest(did_pass):
@@ -26,25 +26,47 @@ def game_of_nim_test_suite():
     :return: None
     """
 
+    print("\n Running the game_of_nim_test_suite())")
     # The following tests test the create_label1() function
-    print("Testing create_label1()")
-    pass
-
-    # The following tests test the create_label2() function
-    print("Testing create_label2()")
-    pass
+    # print("Testing create_label1()")
+    # pass
+    #
+    # # The following tests test the create_label2() function
+    # print("Testing create_label2()")
+    # pass
 
     # The following tests test the text_box1() function
-    print("Testing text_box1()")
-    pass
+    # print("Testing text_box1()")
+    # pass
+    #
+    # # The following tests test the text_box2() function
+    # print("Testing text_box2()")
+    # pass
 
-    # The following tests test the text_box2() function
-    print("Testing text_box2()")
-    pass
+    # The following tests test the fun_remove_balls() function
+
+    # unittest(fun_remove_balls(12, 14) == 14)
+
+    # Create an instance of the NimII class
+    nim_instance = NimII(windowtext="")
+
+
+    # The following tests the fun_remove_balls() function
+    unittest(nim_instance.fun_remove_balls(10) == 14)
+    unittest(nim_instance.fun_remove_balls(2) == 0)
+
+    unittest(nim_instance.fun_comp_turn() == 14)
+    print("\n Running the game_of_nim_test_suite())")
 
 
 def main():
+    """
+
+    :return:
+    """
+
     game_of_nim_test_suite()
 
 
-main()
+if __name__ == "__main__":
+    main()

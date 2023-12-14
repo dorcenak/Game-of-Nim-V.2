@@ -1,6 +1,7 @@
 import tkinter as tk
 import random
 
+
 class NimII:
     def __init__(self, windowtext):
         self.root = tk.Tk()
@@ -30,9 +31,15 @@ class NimII:
         self.myTextLabel5Text = tk.StringVar()
         self.myTextLabel5 = "Let's start with {0} balls.".format(self.number_of_balls)
         self.myTextLabel6Text = tk.StringVar()
-        self.myTextLabel6 = None
+        self.myTextLabel6 = "wow"
         self.myTextLabel7Text = tk.StringVar()
         self.myTextLabel7 = None
+        self.myTextLabel8Text = tk.StringVar()
+        self.myTextLabel8 = None
+        self.myTextLabel9Text = tk.StringVar()
+        self.myTextLabel9 = None
+        self.myTextLabel10Text = tk.StringVar()
+        self.myTextLabel10 = None
 
     def create_label1(self, labeltext=""):
         self.myTextLabel1Text.set(labeltext)
@@ -69,16 +76,27 @@ class NimII:
         self.myTextLabel5Text.set(labeltext5)
         self.myTextLabel5 = tk.Label(self.root, textvariable=self.myTextLabel5Text, font=('Verdana', 10), bg='#333333', fg='white')
         self.myTextLabel5.place(relx=0.5, rely=0.2, anchor='center')
+        self.root.after(1000, self.clear_label5)
 
-    def create_label6(self, labeltext6="How many balls do you want to remove"):
+    def create_label6(self, labeltext6=""):
         self.myTextLabel6Text.set(labeltext6)
         self.myTextLabel6 = tk.Label(self.root, textvariable=self.myTextLabel6Text, font=('Verdana', 10), bg='#333333', fg='white')
-        self.myTextLabel6.place(relx=0.5, rely=0.2, anchor='center')
+        self.myTextLabel6.place(relx=0.5, rely=0.3, anchor='center')
 
     def create_label7(self, labeltext7=""):
         self.myTextLabel7Text.set(labeltext7)
         self.myTextLabel7 = tk.Label(self.root, textvariable=self.myTextLabel7Text, font=('Verdana', 10), bg='#333333', fg='white')
         self.myTextLabel7.place(relx=0.5, rely=0.2, anchor='center')
+
+    def create_label8(self, labeltext8=""):
+        self.myTextLabel8Text.set(labeltext8)
+        self.myTextLabel8 = tk.Label(self.root, textvariable=self.myTextLabel8Text, font=('Verdana', 10), bg='#333333', fg='white')
+        self.myTextLabel8.place(relx=0.5, rely=0.2, anchor='center')
+
+    def create_label10(self, labeltext6=""):
+        self.myTextLabel10Text.set(labeltext6)
+        self.myTextLabel10 = tk.Label(self.root, textvariable=self.myTextLabel10Text, font=('Verdana', 10), bg='#333333', fg='white')
+        self.myTextLabel10.place(relx=0.5, rely=0.4, anchor='center')
 
     def create_button1(self, buttontext="", command=None):
         self.myButton1 = tk.Button(self.root, text=buttontext,  font=('Verdana', 10), command=self.button1_handler)
@@ -104,8 +122,9 @@ class NimII:
 
     def clear_label5(self):
         self.myTextLabel5Text.set("")
-        self.create_label6()
+        self.create_label6("How many balls do you want to remove")
         self.create_textbox2()
+        self.create_button2("Submit")
 
     def button1_handler(self):
         print("Button 1 clicked!")
@@ -117,21 +136,128 @@ class NimII:
         self.myButton1.destroy()
         self.create_label3(message)
 
+    def fun_remove_balls(self, remove_value):
+        self.number_of_balls -= remove_value
+        return self.number_of_balls
+
+    def fun_comp_turn(self):
+        remove_value = self.number_of_balls % 5
+        self.number_of_balls -= remove_value
+        return remove_value
+
+    def create_label9(self, labeltext9=""):
+        self.myTextLabel9Text.set(labeltext9)
+        self.myTextLabel9 = tk.Label(self.root, textvariable=self.myTextLabel9Text, font=('Verdana', 10), bg='#333333',
+                                     fg='red')
+        self.myTextLabel9.place(relx=0.5, rely=0.5, anchor='center')
+
+    def clear_label9(self):
+        self.myTextLabel9Text.set("")
+
+    def clear_label6(self):
+        self.myTextLabel6Text.set("")
+        self.create_label9("")
+
+    def clear_label9(self):
+        self.myTextLabel9Text.set("")
+        self.myTextLabel9 = tk.Label(self.root, textvariable=self.myTextLabel9Text, font=('Verdana', 10), bg='#333333',
+                                     fg='white')
+        self.myTextLabel9.place(relx=0.5, rely=0.5, anchor='center')
+
+    def hide_submit_button(self):
+        self.myButton2.place_forget()
+
+    def show_submit_button(self):
+        self.myButton2.place(relx=0.5, rely=0.44, anchor='center')
+
     def button2_handler(self):
         print("Button 2 clicked!")
         txt2 = self.myTextBox2.get()
-        # self.myTextBox1Text.set(txt)  # Store the entered text
-        message = "You removed {0}, The computer removed {1} balls, There are {2} balls remaining".format(txt2)
-        self.myTextLabel6.destroy()
-        self.myTextBox2.destroy()
-        self.myButton2.destroy()
-        self.create_label7(message)
+
+        if not txt2.isdigit() or not (1 <= int(txt2) <= 4):
+            error_message = "Please enter a number between 1 and 4."
+            self.create_label9(error_message)
+            return
+
+        txt2 = int(txt2)
+
+        # Reset the textbox
+        self.myTextBox2.delete(0, tk.END)
+
+        # Perform the game logic
+        self.number_of_balls = self.fun_remove_balls(txt2)
+
+        if self.number_of_balls == 0:
+            message = f'You removed {txt2} ball(s). You won!'
+            self.create_label7(message)
+            self.create_label8("Press 'Restart Game' to play again.")
+            self.hide_submit_button()
+            self.create_restart_button()
+        else:
+            comp_remove_value = self.fun_comp_turn()
+            message = f'You removed {txt2}, The computer removed {comp_remove_value} ball(s), There are {self.number_of_balls} ball(s) remaining.'
+            self.clear_label6()
+            self.create_label7(message)
+            self.create_label6("How many balls do you want to remove")
+            self.create_textbox2()
+            self.show_submit_button()
+
+            if self.number_of_balls == 0:
+                comp_message = f'Computer won!'
+
+                self.clear_label6()
+                self.create_label8(comp_message)
+                self.hide_submit_button()
+                self.create_restart_button()
 
 
+    def restart_game(self):
+        # Reset game variables and labels
+        self.number_of_balls = random.randint(15, 100)
+        self.message_number_of_balls = "Let's start with {0} balls.".format(self.number_of_balls)
+        self.myTextLabel7Text.set("")
+        self.myTextLabel8Text.set("")
+        self.clear_label9()  # Clear the error message
+        self.create_label5(self.message_number_of_balls)
+
+        # Show the textbox and the submit button
+        self.myTextBox2.place(relx=0.5, rely=0.382, anchor='center')
+
+        # Hide the "Restart Game" button
+        self.restart_button.place_forget()
+
+    def create_restart_button(self):
+        self.myButton1.destroy()
+        self.restart_button = tk.Button(self.root, text="Restart Game", font=('Verdana', 10), command=self.restart_game)
+        self.restart_button.place(relx=0.5, rely=0.3, anchor='center')
+        # Hide the textbox and the submit button
+        self.myTextBox2.place_forget()
+        # self.hide_submit_button()
+
+    def create_label7(self, labeltext7=""):
+        self.myTextLabel7Text.set(labeltext7)
+        self.myTextLabel7 = tk.Label(self.root, textvariable=self.myTextLabel7Text, font=('Verdana', 10), bg='#333333', fg='white')
+        self.myTextLabel7.place(relx=0.5, rely=0.2, anchor='center')
+
+    def create_label8(self, labeltext8=""):
+        self.myTextLabel8Text.set(labeltext8)
+        self.myTextLabel8 = tk.Label(self.root, textvariable=self.myTextLabel8Text, font=('Verdana', 10), bg='#333333', fg='white')
+        self.myTextLabel8.place(relx=0.5, rely=0.25, anchor='center')
+
+# "New"
+    def create_quit_button(self):
+        quit_button = tk.Button(self.root, text="Quit", font=('Verdana', 10), command=self.quit_game)
+        quit_button.place(relx=0.5, rely=0.9, anchor='center')
+
+    def quit_game(self):
+        self.root.destroy()
 def main():
+
     myGUI = NimII("Games of Nim V2.0")
     myGUI.create_label1("Welcome to the Games of Nim V2.0")
+    myGUI.create_quit_button()
     myGUI.root.mainloop()
 
+
 if __name__ == "__main__":
-    main()
+ main()
