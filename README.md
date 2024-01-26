@@ -2,39 +2,19 @@
 
 **Author(s)**: Kichemy & Diego
 
-**Google Doc Link**: https://docs.google.com/document/d/1iyLxrsavHL-QFgBKrcvRiFc25MP0h0UUUf7HaLXz0MA/edit?usp=sharing
-
-
 ---
-
-## Milestone 1: Setup, Planning, Design
 
 **Title**: 
   Game of Nim Mark II
 
 **Purpose**: 
-  Our project will work in the same manner as the original game of nim but with the change 
-of making the code generate a random starting amount of balls.
+  Our project's algorithm will work in the same manner as the original game of nim but with the change 
+of making the code generate a random starting amount of balls. We will also implement several options such as, restarting the Game in case you loose,
+quit button to exit the game and personalize the Game by adding your name when you first start playing.
 
 **Sources**: 
   Our project will be based on homework 6: The Game of Nim.
-**CRC Card(s)**:
-  
-![alt text](image/CRC.png "Image of CRC card as an example. Upload your CRC card(s) in place of this one")
-
-**Branches**: 
-1. Branch 1 name: kichemy-branch
-2. Branch 2 name: DACC-branch
- 
-
 ---
- 
-## Milestone 3: Virtual Check-In
-
-️**Completion Percentage**: 70%
-
-**Confidence**: We are pretty confident right now in finishing the project on time. The strategy we will be using to move forward as fast as possible is the top-down design.
-
 
 ---
 
@@ -47,7 +27,6 @@ When the game starts there will be a text displaying a welcome message. After th
 We created the necessary issue queues for any bugs.
 
 ### Reflection
-In three to four well-written paragraphs, address the following (at a minimum):
 At first, we wanted to choose a straightforward project. However, when we were thinking about it, we noticed that the project can be simple to run into the console, but it won’t be that simple to implement into the GUI window. Later on, we chose the Game of Nim, not because of its simplicity but because of its closeness to what we call “Games.” Additionally, it was the assignment we understood the most.
 
 The new design overall is substantially different from that of the original. Our goal for this project was to make the game more user-friendly, and we achieved that by implementing the game into a screen pop-up rather than just simple printed input texts.
